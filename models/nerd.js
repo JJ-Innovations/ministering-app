@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
 
 module.exports = mongoose.model('Nerd', {
-    name: {type: Sring, default: ''}
+    name: {type: String, default: ''}
 });
