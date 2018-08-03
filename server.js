@@ -6,6 +6,7 @@ var app = express();
 var bodyParser = require('body-parser');
 var methodOveride = require('method-override');
 var mongoose = require('mongoose');
+var cors = require('cors');
 
 //configuration =================================
 
@@ -18,7 +19,7 @@ var port = process.env.PORT || 8080;
 
 //connect to our mongoDB database
 //(uncomment after you enter in your own credentials in config/db.js)
-mongoose.connect(db.url)
+mongoose.connect(db.url, { useNewUrlParser: true});
 
 //get all data/stuff pf the body (POST) parameters
 //parse applications/json
@@ -27,6 +28,8 @@ app.use(bodyParser.json());
 
 //parse application/vnd.api+json as json
 app.use(bodyParser.json({type: 'application/vnd.api+json' }));
+
+app.use(cors());
 
 //parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));

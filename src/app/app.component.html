@@ -1,5 +1,6 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
+  <!-- <router-outlet></router-outlet> We will use this once we implement routing and move components to children-->
   <h1>
     Welcome to {{ title }}!
   </h1>
@@ -7,14 +8,6 @@
 </div>
 <h2>Here are some links to help you start: </h2>
 <ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
+  <li *ngFor="let nerd of nerds">{{nerd.name}}</li>
 </ul>
 
