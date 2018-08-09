@@ -10,6 +10,9 @@ var cors = require('cors');
 
 //configuration =================================
 
+// Create link to Angular build directory
+var distDir = __dirname + "/dist/";
+app.use(express.static(distDir));
 
 //config files
 var db = require('./config/db');

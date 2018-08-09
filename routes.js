@@ -12,6 +12,8 @@ module.exports = function(app) {
     });
     
     app.get('*', function(req, res) {
-        res.sendfile('./src/error.html');
+        res.sendfile('./dist/index.html');
     });
+
+    
 };
