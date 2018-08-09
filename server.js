@@ -8,7 +8,6 @@ var methodOveride = require('method-override');
 var mongoose = require('mongoose');
 var cors = require('cors');
 var passport = require('passport');
-
 require('./models/user');
 require('./passport');
 
