@@ -7,6 +7,10 @@ var bodyParser = require('body-parser');
 var methodOveride = require('method-override');
 var mongoose = require('mongoose');
 var cors = require('cors');
+var passport = require('passport');
+
+require('./models/user');
+require('./passport');
 
 //configuration =================================
 
@@ -43,6 +47,8 @@ app.use(methodOveride('X-HTTP-Method-Override'));
 //set the static files location /public/img will be /img for users
 app.use(express.static(__dirname + '/src'));
 
+//Initilize Passport before the routes
+app.use(passport.initialize());
 
 //routes ===========================================
 require('./routes')(app);
