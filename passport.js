@@ -3,7 +3,7 @@ var LocalStrategy = require('passport-local').Strategy;
 var mongoose = require('mongoose');
 var User = mongoose.model('User');
 
-module.exports = function(username, password, done) {
+passport.use(new LocalStrategy(function(username, password, done) {
     User.findOne({ username: username }, function (err, user) {
       if (err) { return done(err); }
       // Return if user not found in database
@@ -21,4 +21,4 @@ module.exports = function(username, password, done) {
       // If credentials are correct, return the user object
       return done(null, user);
     });
-  };
+}));

@@ -52,6 +52,14 @@ app.use(passport.initialize());
 //routes ===========================================
 require('./routes')(app);
 
+//error-handlers
+app.use(function (err, req, res, next) {
+    if (err.name === 'UnauthorizedError') {
+      res.status(401);
+      res.json({"message" : err.name + ": " + err.message});
+    }
+  });
+
 app.listen(port);
 
 //shout to the user
