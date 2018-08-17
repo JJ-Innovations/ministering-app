@@ -1,5 +1,7 @@
 //server.js
 
+//Authentication used: https://www.sitepoint.com/user-authentication-mean-stack/
+
 //modules =======================================
 var express = require('express');
 var app = express();
