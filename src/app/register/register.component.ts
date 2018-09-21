@@ -10,6 +10,8 @@ export class RegisterComponent {
     username: '',
     password: ''
   };
+  
+  submitBtnEnabled: false;
 
   constructor(private auth: AuthenticationService, private router: Router) {}
 
